@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/mentorsection.css">
+    
+    <link rel="stylesheet" href="/upload.css">
+    <!-- Boxicons CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-html5 icon'></i>
+        <div class="logo_name">Mentor</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      
+      <li>
+        <a href="mentordashboard.html">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Messages</span>
+       </a>
+       <span class="tooltip">Messages</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">File Manager</span>
+       </a>
+       <span class="tooltip">Files</span>
+     </li>
+     
+     
+     <li class="profile">
+         <div class="profile-details">
+           <img src="./public/mentor.jpg" alt="profileImg">
+           <div class="name_job">
+             <div class="name">Virat Kohli</div>
+             <div class="job">Web designer</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <div class="upload-section">
+    <div class="wrapper">
+      <div class="title">
+        Upload courses
+      </div>
+      <form action="/mentors/upload-course" method="post">
+      <div class="form">
+        <div class="inputfield">
+           <label>course title</label>
+           <input class="input" type="text" name="title" placeholder="Course Title" require>
+        </div>  
+          
+
+       <div class="inputfield">
+           <label>course description</label>
+           <textarea name="description" placeholder="Course Description" class="textarea" required></textarea>
+       </div> 
+        <div class="inputfield">
+          <label>course objective-1</label>
+          <textarea name="objective1" class="textarea" placeholder="Objective"></textarea>
+        </div>
+        <div class="inputfield">
+          <label>course objective-2</label>
+          <textarea name="objective2" class="textarea" placeholder="Objective"></textarea>
+        </div> 
+       <div class="inputfield">
+           <label>upload image</label>
+           <input type="file" name="image" class="input" placeholder="Upload image" required>
+        </div>
+        <div class="inputfield">
+         <label>upload video</label>
+         <input type="file" name="video" class="input" placeholder="Upload Video" required>
+      </div> ~
+      
+       <div class="inputfield">
+        <button class="btn" type="submit">Upload Course</button>
+      </div>
+     </div>
+    </form>
+  </div>
+</div>
+     
+      <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+        sidebar.classList.add("open");
+        closeBtn.addEventListener("click", ()=>{
+          sidebar.classList.toggle("open");
+          menuBtnChange();//calling the function(optional)
+        });
+      
+        searchBtn.addEventListener("click", ()=>{ 
+          sidebar.classList.toggle("open");
+          menuBtnChange(); 
+        });
+      
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+         if(sidebar.classList.contains("open")){
+           closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+         }else {
+           closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+         }
+        }
+        </script>
+    
+</body>
+</html>
